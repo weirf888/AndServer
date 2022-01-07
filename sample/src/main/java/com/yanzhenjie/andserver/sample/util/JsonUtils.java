@@ -35,7 +35,7 @@ public class JsonUtils {
     public static String successfulJson(Object data) {
         ReturnData returnData = new ReturnData();
         returnData.setSuccess(true);
-        returnData.setErrorCode(200);
+        returnData.setCode(200);
         returnData.setData(data);
         return JSON.toJSONString(returnData);
     }
@@ -51,8 +51,8 @@ public class JsonUtils {
     public static String failedJson(int code, String message) {
         ReturnData returnData = new ReturnData();
         returnData.setSuccess(false);
-        returnData.setErrorCode(code);
-        returnData.setErrorMsg(message);
+        returnData.setCode(code);
+        returnData.setMessage(message);
         return JSON.toJSONString(returnData);
     }
 

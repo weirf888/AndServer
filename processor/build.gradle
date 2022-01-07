@@ -7,6 +7,7 @@ compileJava {
 
 dependencies {
     api project(':annotation')
+    implementation 'com.sun.activation:javax.activation:1.2.0'
 
     implementation deps.poet
     implementation deps.apache.lang

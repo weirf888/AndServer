@@ -28,11 +28,11 @@ public class ReturnData implements Parcelable {
     @JSONField(name = "isSuccess")
     private boolean isSuccess;
 
-    @JSONField(name = "errorCode")
-    private int errorCode;
+    @JSONField(name = "code")
+    private int code;
 
-    @JSONField(name = "errorMsg")
-    private String errorMsg;
+    @JSONField(name = "message")
+    private String message;
 
     @JSONField(name = "data")
     private Object data;
@@ -42,15 +42,15 @@ public class ReturnData implements Parcelable {
 
     protected ReturnData(Parcel in) {
         isSuccess = in.readByte() != 0;
-        errorCode = in.readInt();
-        errorMsg = in.readString();
+        code = in.readInt();
+        message = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeByte((byte) (isSuccess ? 1 : 0));
-        dest.writeInt(errorCode);
-        dest.writeString(errorMsg);
+        dest.writeInt(code);
+        dest.writeString(message);
     }
 
     @Override
@@ -78,20 +78,20 @@ public class ReturnData implements Parcelable {
         isSuccess = success;
     }
 
-    public int getErrorCode() {
-        return errorCode;
+    public int getCode() {
+        return code;
     }
 
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public String getErrorMsg() {
-        return errorMsg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public Object getData() {
