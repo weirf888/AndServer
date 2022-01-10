@@ -29,4 +29,10 @@ public class PageController {
         // Equivalent to [return "/index"].
         return "forward:/index.html";
     }
+
+    @GetMapping(path = "/mine")
+    public String mineSweeper() {
+        // Equivalent to [return "/index"].
+        return "forward:/mine_sweeper/index.html";
+    }
 }
