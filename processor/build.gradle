@@ -14,4 +14,4 @@ dependencies {
     implementation deps.apache.collections
 }
 
-apply from: '../bintray.gradle'
+apply from: '../central.gradle'
